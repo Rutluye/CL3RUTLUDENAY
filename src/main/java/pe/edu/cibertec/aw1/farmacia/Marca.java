@@ -1,8 +1,17 @@
 package pe.edu.cibertec.aw1.farmacia;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Marca {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
 	String nombre;
+	String descripcion;
 	String logo;
 
 	Marca(Integer id, String nombre) {
@@ -27,5 +36,12 @@ public class Marca {
 	// marca.nombre
 	// marca.getNombre()
 
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
 
 }

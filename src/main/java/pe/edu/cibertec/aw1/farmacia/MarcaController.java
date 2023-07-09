@@ -1,6 +1,5 @@
 package pe.edu.cibertec.aw1.farmacia;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,16 +14,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/marcas")
 public class MarcaController {
 
-    List<Marca> marcas = new ArrayList<>();
+    private MarcaRepository marcaRepository;
 
-    public MarcaController() {
-        marcas.add(new Marca(1, "Baby Jhonson"));
-        marcas.add(new Marca(2, "Neko"));
-        marcas.add(new Marca(3, "Oral B"));
+    MarcaController(MarcaRepository marcaRepository) {
+        this.marcaRepository = marcaRepository;
     }
-
+    
     @GetMapping
     public String list(Model model) {
+        // select m from Marca m;
+        // sql: select * from marca;
+        List<Marca> marcas = marcaRepository.findAll();
+        // List<Persona> personas = personaRepositroy.findByNombre("Juan");
+        
         model.addAttribute("marcas", marcas);
         return "marcas/listar";
     }
@@ -37,14 +39,15 @@ public class MarcaController {
 
     @PostMapping
     public String store(Marca marca) {
-        marca.id = marcas.size() + 10; // genero el id
-        marcas.add(marca);
+        // INSERT INTO marca (nombre, logo) VALUES (?, ?)
+        marcaRepository.save(marca);
         return "redirect:/marcas";
     }
 
     @GetMapping("/{id}")
     public String show(@PathVariable Integer id, Model model) {
-        Optional<Marca> marcaOptional = marcas.stream().filter(marca -> marca.getId().equals(id)).findFirst();
+        // SELECT * FROM marca where id = ?
+        Optional<Marca> marcaOptional = marcaRepository.findById(id);
         if(marcaOptional.isEmpty()) {
             return "404";
         }
