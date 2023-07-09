@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Farmacia Quekiwi</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <a th:href="@{/nosotros}">Nosotros</a>
+    <a th:href="@{/marcas}">Marcas</a>
+
+    <h1>Farmacia Quekiwi</h1>
+    <p>Bienvenido a la farmacia estamos para cuidarte</p>
+    <p>Atendemos las 24 horas</p>
+    <footer>
+        Copyright © <span th:text="${year}"></span>
+    </footer>
+</body>
+</html>
