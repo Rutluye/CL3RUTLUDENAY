@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form th:action="@{/productos/{id}/delete(id=${producto.id})}" method="post">
+        <button>Eliminar</button>
+    </form>
+
+    <h1>Editar productos</h1>
+    <form th:action="@{/productos/{id}(id=${producto.id})}" method="post" th:object="${producto}">
+        <div>
+            <label for="nombre">Nombre</label>
+            <input id="nombre" type="text" th:field="*{nombre}">
+            <!-- data binding -->
+        </div>
+        <div>
+            <label for="stock">Stock</label>
+            <input id="stock" type="number" th:field="*{stock}">
+        </div>
+        <div>
+            <label for="precio">Precio</label>
+            <input id="precio" type="number" th:field="*{precio}" step="0.5">
+        </div>
+        <button>Guardar</button>
+    </form>
+
+</body>
+</html>
