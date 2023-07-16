@@ -55,4 +55,43 @@ public class MarcaController {
         model.addAttribute("marca", marcaOptional.get());
         return "marcas/detail";
     }
+
+    @GetMapping("/{id}/edit")
+    public String showFormEdit(@PathVariable Integer id, Model model) {
+        Optional<Marca> marcaOptional = marcaRepository.findById(id);
+        if(marcaOptional.isEmpty()) {
+            return "404";
+        }
+
+        model.addAttribute("marca", marcaOptional.get());
+        return "marcas/edit";
+    }
+
+    @PostMapping("/{id}")
+    public String edit(@PathVariable Integer id, Marca dataFormulario) {
+        Optional<Marca> marcaOptional = marcaRepository.findById(id);
+        if(marcaOptional.isEmpty()) {
+            return "404";
+        }
+
+        Marca marca = marcaOptional.get();
+        marca.setNombre(dataFormulario.getNombre());
+        marca.setDescripcion(dataFormulario.getDescripcion());
+        marcaRepository.save(marca); // UPDATE 
+
+        return "redirect:/marcas";
+    }
+
+    @PostMapping("/{id}/delete")
+    public String delete(@PathVariable Integer id) {
+        // Optional<Marca> marcaOptional = marcaRepository.findById(id);
+        // if(marcaOptional.isEmpty()) {
+        //     return "404";
+        // }
+        // Marca marca = marcaOptional.get();
+        // marcaRepository.delete(marca);
+        marcaRepository.deleteById(id);
+        return "redirect:/marcas";
+    }
+
 }
