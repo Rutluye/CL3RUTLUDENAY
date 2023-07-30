@@ -1,4 +1,4 @@
-package pe.edu.cibertec.aw1.farmacia;
+package pe.edu.cibertec.aw1.farmacia.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,12 +14,12 @@ public class Marca {
 	String descripcion;
 	String logo;
 
-	Marca(Integer id, String nombre) {
+	public Marca(Integer id, String nombre) {
 		this.id = id;
 		this.nombre = nombre;
 	}
 
-	Marca() {}
+	public Marca() {}
 
 	public Integer getId() {
 		return id;

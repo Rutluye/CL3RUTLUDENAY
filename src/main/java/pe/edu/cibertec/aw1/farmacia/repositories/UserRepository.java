@@ -1,4 +1,4 @@
-package pe.edu.cibertec.aw1.farmacia;
+package pe.edu.cibertec.aw1.farmacia.repositories;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,6 +7,8 @@ import java.time.LocalDateTime;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+
+import pe.edu.cibertec.aw1.farmacia.entities.User;
 
 public interface UserRepository extends CrudRepository<User, Long> {
     // select * from user where username = ?

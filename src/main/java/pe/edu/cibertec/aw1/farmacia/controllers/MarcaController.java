@@ -1,4 +1,4 @@
-package pe.edu.cibertec.aw1.farmacia;
+package pe.edu.cibertec.aw1.farmacia.controllers;
 
 import java.util.List;
 import java.util.Optional;
@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import pe.edu.cibertec.aw1.farmacia.entities.Marca;
+import pe.edu.cibertec.aw1.farmacia.repositories.MarcaRepository;
 
 @Controller
 @RequestMapping("/marcas")

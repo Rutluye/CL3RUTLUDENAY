@@ -1,4 +1,4 @@
-package pe.edu.cibertec.aw1.farmacia;
+package pe.edu.cibertec.aw1.farmacia.entities;
 
 import java.time.LocalDateTime;
 

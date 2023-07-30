@@ -1,4 +1,4 @@
-package pe.edu.cibertec.aw1.farmacia;
+package pe.edu.cibertec.aw1.farmacia.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

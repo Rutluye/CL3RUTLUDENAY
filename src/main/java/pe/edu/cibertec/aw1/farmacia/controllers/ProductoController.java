@@ -1,4 +1,4 @@
-package pe.edu.cibertec.aw1.farmacia;
+package pe.edu.cibertec.aw1.farmacia.controllers;
 
 import java.util.List;
 import java.util.Optional;
@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import pe.edu.cibertec.aw1.farmacia.dtos.ProductoDto;
+import pe.edu.cibertec.aw1.farmacia.entities.Producto;
+import pe.edu.cibertec.aw1.farmacia.repositories.ProductoRepository;
 
 @Controller
 @RequestMapping("productos")
@@ -79,9 +83,9 @@ public class ProductoController {
         }
 
         Producto producto = productoOptional.get();
-        producto.nombre = productoDataForm.getNombre();
-        producto.precio = productoDataForm.getPrecio();
-        producto.stock = productoDataForm.getStock();
+        producto.setNombre(productoDataForm.getNombre());
+        producto.setPrecio(productoDataForm.getPrecio());
+        producto.setStock(productoDataForm.getStock());
         productoRepository.save(producto);
 
         return "redirect:/productos";

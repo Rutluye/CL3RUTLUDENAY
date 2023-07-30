@@ -1,4 +1,4 @@
-package pe.edu.cibertec.aw1.farmacia;
+package pe.edu.cibertec.aw1.farmacia.entities;
 
 import java.math.BigDecimal;
 
@@ -18,9 +18,9 @@ public class Producto {
     Integer stock;
     BigDecimal precio;
 
-    Producto() {}
+    public Producto() {}
 
-    Producto(String nombre, Integer stock, BigDecimal precio) {
+    public Producto(String nombre, Integer stock, BigDecimal precio) {
         this.nombre = nombre;
         this.stock = stock;
         this.precio = precio;
