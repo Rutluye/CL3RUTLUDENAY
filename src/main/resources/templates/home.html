@@ -9,6 +9,10 @@
 <body>
     <a th:href="@{/nosotros}">Nosotros</a>
     <a th:href="@{/marcas}">Marcas</a>
+    <a th:href="@{/login}">Login</a>
+    <form th:action="@{/logout}" method="post">
+        <button>Logout</button>
+    </form>
 
     <h1>Farmacia Quekiwi</h1>
     <p>Bienvenido a la farmacia estamos para cuidarte</p>
