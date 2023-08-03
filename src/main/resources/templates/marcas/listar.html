@@ -8,7 +8,9 @@
     <p>Trabajamos con las mejores marcas, marcas que les son <strong>familiares y confiables</strong></p>
 
 
-    <a th:href="@{/marcas/create}">Registrar marca</a>
+    <div sec:authorize="hasRole('ROLE_USER')">
+        <a th:href="@{/marcas/create}">Registrar marca</a>
+    </div>
 
     <table class="table">
         <thead>
