@@ -70,7 +70,7 @@ public class SecurityConfiguration {
         return httpSecurity
             .authorizeHttpRequests(authorizeHttpRequests -> 
                 authorizeHttpRequests
-                    .requestMatchers("/nosotros", "/").permitAll()
+                    .requestMatchers("/nosotros", "/", "/registrar").permitAll()
                     .requestMatchers("/**").authenticated()
                     // .requestMatchers("/marcas").hasAuthority("ROLE_USER")
                 )
