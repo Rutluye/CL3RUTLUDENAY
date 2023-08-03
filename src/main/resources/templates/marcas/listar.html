@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head th:insert="~{fragments :: head}">
+<html xmlns:th="http://www.thymeleaf.org" th:insert="~{layout :: base(~{::title}, ~{::body})}">
+<head>
+    <title>Marcas</title>
 </head>
 <body>
-    <div th:insert="~{fragments :: header}"></div>
-
     <h1>Marcas con las que trabajamos</h1>
     <p>Trabajamos con las mejores marcas, marcas que les son <strong>familiares y confiables</strong></p>
 
@@ -31,7 +30,5 @@
             </tr>
         </tbody>
     </table>
-
-    <div th:insert="~{fragments :: footer}"></div>
 </body>
 </html>

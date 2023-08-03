@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head th:insert="~{fragments :: head}">
+<html xmlns:th="http://www.thymeleaf.org" th:insert="~{layout :: base(~{::title}, ~{::body})}">
+<head>
+    <title>Nosotros</title>
 </head>
 <body>
-    <div th:insert="~{fragments :: header}"></div>
-
     <h1>Nosotros</h1>
     <p>Somos una empresa...</p>
-    
-    <div th:insert="~{fragments :: footer}"></div>
 </body>
 </html>

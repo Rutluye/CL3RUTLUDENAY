@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head th:insert="~{fragments :: head}">
+<html xmlns:th="http://www.thymeleaf.org" th:insert="~{layout :: base(~{::title}, ~{::body})}">
+<head>
+    <title>Farmacia Quekiwi</title>
 </head>
 <body>
-    <div th:insert="~{fragments :: header}"></div>
-
     <h1>Farmacia Quekiwi</h1>
     <p>Bienvenido a la farmacia estamos para cuidarte</p>
     <p>Atendemos las 24 horas</p>
-    
-    <div th:insert="~{fragments :: footer}"></div>
 </body>
 </html>

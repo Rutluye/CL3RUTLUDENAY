@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head th:insert="~{fragments :: head}">
+<html xmlns:th="http://www.thymeleaf.org" th:insert="~{layout :: base(~{::title}, ~{::body})}">
+<head>
+    <title>Productos</title>
 </head>
 <body>
-    <div th:insert="~{fragments :: header}"></div>
     
     <h1>Productos</h1>
     <a th:href="@{/productos/create}">Registra nuevo producto</a>
