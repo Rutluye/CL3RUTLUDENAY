@@ -1,18 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Farmacia Quekiwi</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+<head th:insert="~{fragments :: head}">
 </head>
 <body>
-    <a th:href="@{/nosotros}">Nosotros</a>
-    <a th:href="@{/marcas}">Marcas</a>
-    <a th:href="@{/login}">Login</a>
-    <form th:action="@{/logout}" method="post">
-        <button>Logout</button>
-    </form>
+    <div th:insert="~{fragments :: header}"></div>
 
     <h1>Farmacia Quekiwi</h1>
     <p>Bienvenido a la farmacia estamos para cuidarte</p>
