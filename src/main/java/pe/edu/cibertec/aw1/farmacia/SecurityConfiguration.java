@@ -71,7 +71,7 @@ public class SecurityConfiguration {
             .authorizeHttpRequests(authorizeHttpRequests -> 
                 authorizeHttpRequests
                     .requestMatchers("/nosotros", "/").permitAll()
-                    .requestMatchers("/marcas").authenticated()
+                    .requestMatchers("/**").authenticated()
                     // .requestMatchers("/marcas").hasAuthority("ROLE_USER")
                 )
             .formLogin(formLogin -> 
