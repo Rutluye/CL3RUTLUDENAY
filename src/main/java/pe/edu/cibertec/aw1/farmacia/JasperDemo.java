@@ -1,7 +1,9 @@
 package pe.edu.cibertec.aw1.farmacia;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,6 +12,7 @@ import org.springframework.core.io.ClassPathResource;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JREmptyDataSource;
 import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
@@ -29,9 +32,14 @@ public class JasperDemo {
             JasperPrint jasperPrint = JasperFillManager.fillReport(report, parameters, dataSource);
 
             // visualizador para mostrarlo en una pantallita
-            JasperViewer jasperViewer = new JasperViewer(jasperPrint, true); // swing
-            jasperViewer.setVisible(true);
+            // JasperViewer jasperViewer = new JasperViewer(jasperPrint, true); // swing
+            // jasperViewer.setVisible(true);
 
+
+            // JasperExportManager.exportReportToPdfFile(jasperPrint, "hola.pdf");
+            
+            OutputStream outputStream = new FileOutputStream("hola.pdf");
+            JasperExportManager.exportReportToPdfStream(jasperPrint, outputStream);
 
 
 
