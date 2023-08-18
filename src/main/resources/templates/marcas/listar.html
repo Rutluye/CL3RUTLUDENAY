@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" th:insert="~{layout :: base(~{::title}, ~{::body})}">
 <head>
-    <title>Marcas</title>
+    <title>Empleados</title>
 </head>
 <body>
-    <h1>Marcas con las que trabajamos</h1>
-    <p>Trabajamos con las mejores marcas, marcas que les son <strong>familiares y confiables</strong></p>
+    <h1>Empleados con los que trabajamos</h1>
+    <p>Somos una empresa ... <strong>empleados sac</strong></p>
 
 
     <div sec:authorize="hasRole('ROLE_USER')">
-        <a th:href="@{/marcas/create}">Registrar marca</a>
+        <a th:href="@{/marcas/create}">Registrar empleado</a>
+        <a th:href="@{/productos/report}">Descargar reporte</a>
+
     </div>
 
     <table class="table">
@@ -17,12 +19,16 @@
             <tr>
                 <th>Id</th>
                 <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Puesto</th>
             </tr>
         </thead>
         <tbody>
             <tr th:each="marca: ${marcas}">
                 <td th:text="${marca.id}"></td>
                 <td th:text="${marca.nombre}"></td>
+                <td th:text="${marca.apellido}"></td>
+                <td th:text="${marca.puesto}"></td>
                 <td>
                     <a th:href="@{/marcas/{id}(id=${marca.id})}">Ver</a>
                 </td>

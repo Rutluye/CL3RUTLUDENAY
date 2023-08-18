@@ -3,17 +3,20 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Farmacia Quekiwi</title>
+    <title>Empleados</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 </head>
 <body>
     <a th:href="@{/nosotros}">Nosotros</a>
-    <a th:href="@{/marcas}">Marcas</a>
+    <a th:href="@{/marcas}">Empleados</a>
 
-    <h1>Registrar marca</h1>
+    <h1>Registrar empleado</h1>
     <form th:action="@{/marcas}" th:object="${marca}" method="post">
     	<p>Nombre: <input type="text" th:field="*{nombre}"/></p>
-        <p>Descripcion: <input type="text" th:field="*{descripcion}"/></p>
+        <p>Apellidos: <input type="text" th:field="*{apellido}"/></p>
+        <p>Salario: <input type="number" th:field="*{salario}"/></p>
+        <p>Puesto: <input type="text" th:field="*{puesto}"/></p>
+        <p>Fecha de registro: <input type="text" th:field="*{descripcion}"/></p>
         <button>Registrar</button>
     </form>
 </body>

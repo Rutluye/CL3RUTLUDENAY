@@ -3,18 +3,18 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Farmacia Quekiwi</title>
+    <title>Empleados sac</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 </head>
 <body>
     <a th:href="@{/nosotros}">Nosotros</a>
-    <a th:href="@{/marcas}">Marcas</a>
+    <a th:href="@{/marcas}">Empleados</a>
 
     <form th:action="@{/marcas/{id}/delete(id=${marca.id})}" method="post">
         <button>Eliminar</button>
     </form>
 
-    <h1>Editar marca</h1>
+    <h1>Editar empleado</h1>
     <form th:action="@{/marcas/{id}(id=${marca.id})}" method="post" th:object="${marca}">
     	<p>Nombre: <input type="text" th:field="*{nombre}"/></p>
         <p>Descripcion: <input type="text" th:field="*{descripcion}"/></p>

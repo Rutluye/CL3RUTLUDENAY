@@ -12,8 +12,7 @@
     <div th:fragment="header">
         <a th:href="@{/}">Quekiwi</a>
         <a th:href="@{/nosotros}">Nosotros</a>
-        <a th:href="@{/marcas}">Marcas</a>
-        <a th:href="@{/productos}">Productos</a>
+        <a th:href="@{/marcas}">Empleados</a>
         <div sec:authorize="!isAuthenticated()">
             <a th:href="@{/login}">Login</a>
             <a th:href="@{/registrar}">Registrate!</a>

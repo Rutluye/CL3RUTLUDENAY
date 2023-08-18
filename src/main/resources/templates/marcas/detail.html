@@ -3,14 +3,17 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Farmacia Quekiwi</title>
+    <title>EMPRESA PERSONAS </title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 </head>
 <body>
     <a th:href="@{/nosotros}">Nosotros</a>
-    <a th:href="@{/marcas}">Marcas</a>
+    <a th:href="@{/marcas}">Empleados</a>
 
-    <h1>Marca <span th:text="${marca.nombre}"></span></h1>
-    <p th:text="${marca.descripcion}"></p>
+    <h1>Datos Empleado <span th:text="${marca.nombre}"></span></h1>
+    <p th:text="${marca.apellido}"></p>
+    <p th:text="${marca.puesto}"></p>
+    <p th:text="${marca.salario}"></p>
+
 </body>
 </html>
