@@ -77,7 +77,7 @@ public class ProductoController {
     @GetMapping("{id}")
     public String detail(@PathVariable Long id, Model model) {
         Optional<Producto> productoOptional = productoRepository.findById(id);
-        if(productoOptional.isEmpty()) {
+        if (productoOptional.isEmpty()) {
             return "404";
         }
 
@@ -89,7 +89,7 @@ public class ProductoController {
     @GetMapping("{id}/edit")
     public String showEditForm(@PathVariable Long id, Model model) {
         Optional<Producto> productoOptional = productoRepository.findById(id);
-        if(productoOptional.isEmpty()) {
+        if (productoOptional.isEmpty()) {
             return "404";
         }
 
@@ -101,7 +101,7 @@ public class ProductoController {
     @PostMapping("{id}")
     public String edit(@PathVariable Long id, Producto productoDataForm) {
         Optional<Producto> productoOptional = productoRepository.findById(id);
-        if(productoOptional.isEmpty()) {
+        if (productoOptional.isEmpty()) {
             return "404";
         }
 
@@ -133,17 +133,16 @@ public class ProductoController {
             // JRDataSource dataSource = new JREmptyDataSource();
             Connection connection = dataSource.getConnection();
 
-
             Map<String, Object> parameters = new HashMap<>();
-            parameters.put("nombreEmpresa", "InkaFarma");
-            parameters.put("descargadoPor", "Arthur");
+            parameters.put("nombreEmpresa", "Empleados");
+            parameters.put("descargadoPor", "RUT LUYE");
 
             JasperPrint jasperPrint = JasperFillManager.fillReport(report, parameters, connection);
             connection.close();
 
             // OutputStream outputStream = new FileOutputStream("hola.pdf");
             response.setContentType("application/pdf");
-            OutputStream outputStream =  response.getOutputStream();
+            OutputStream outputStream = response.getOutputStream();
             JasperExportManager.exportReportToPdfStream(jasperPrint, outputStream);
 
         } catch (IOException | JRException e) {
