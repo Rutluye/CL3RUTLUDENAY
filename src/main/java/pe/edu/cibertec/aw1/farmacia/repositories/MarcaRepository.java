@@ -12,9 +12,11 @@ public interface MarcaRepository extends CrudRepository<Marca, Integer> {
 	// select m from Marca m where nombre = ?
 	List<Marca> findByNombre(String nombre);
 
+	List<Marca> findByApellido(String apellido);
+
+	List<Marca> findByPuesto(String puesto);
+
 }
-
-
 
 // spring data
 // Repository es un repository sin nada.

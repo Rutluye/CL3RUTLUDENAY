@@ -1,10 +1,49 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" th:insert="~{layout :: base(~{::title}, ~{::body})}">
 <head>
-    <title>Nosotros</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Registros de Usuarios</title>
+    <!-- Agrega los enlaces a los estilos de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Nosotros</h1>
-    <p>Somos una empresa...</p>
+    <div class="container mt-5">
+        <h1 class="text-center">Lista de Usuarios</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Puesto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí puedes agregar los registros de usuarios dinámicamente -->
+                <tr>
+                    <td>Rut</td>
+                    <td>Ludena</td>
+                    <td>Programador</td>
+                </tr>
+                <tr>
+                    <td>Ariana</td>
+                    <td>Ludena</td>
+                    <td>Diseñador UX</td>
+                </tr>
+
+                <tr>
+                    <td>Aaron</td>
+                    <td>Chacon</td>
+                    <td>Programador Senior</td>
+                </tr>
+                <!-- Puedes agregar más filas según los registros de usuarios -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Agrega los enlaces a los scripts de Bootstrap y jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </body>
 </html>

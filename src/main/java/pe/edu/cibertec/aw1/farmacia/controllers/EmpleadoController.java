@@ -15,21 +15,17 @@ import pe.edu.cibertec.aw1.farmacia.repositories.MarcaRepository;
 
 @Controller
 @RequestMapping("/marcas")
-public class MarcaController {
+public class EmpleadoController {
 
     private MarcaRepository marcaRepository;
 
-    MarcaController(MarcaRepository marcaRepository) {
+    EmpleadoController(MarcaRepository marcaRepository) {
         this.marcaRepository = marcaRepository;
     }
-    
+
     @GetMapping
     public String list(Model model) {
-        // select m from Marca m;
-        // sql: select * from marca;
         List<Marca> marcas = marcaRepository.findAll();
-        // List<Persona> personas = personaRepositroy.findByNombre("Juan");
-        
         model.addAttribute("marcas", marcas);
         return "marcas/listar";
     }
@@ -51,7 +47,7 @@ public class MarcaController {
     public String show(@PathVariable Integer id, Model model) {
         // SELECT * FROM marca where id = ?
         Optional<Marca> marcaOptional = marcaRepository.findById(id);
-        if(marcaOptional.isEmpty()) {
+        if (marcaOptional.isEmpty()) {
             return "404";
         }
 
@@ -62,7 +58,7 @@ public class MarcaController {
     @GetMapping("/{id}/edit")
     public String showFormEdit(@PathVariable Integer id, Model model) {
         Optional<Marca> marcaOptional = marcaRepository.findById(id);
-        if(marcaOptional.isEmpty()) {
+        if (marcaOptional.isEmpty()) {
             return "404";
         }
 
@@ -73,14 +69,14 @@ public class MarcaController {
     @PostMapping("/{id}")
     public String edit(@PathVariable Integer id, Marca dataFormulario) {
         Optional<Marca> marcaOptional = marcaRepository.findById(id);
-        if(marcaOptional.isEmpty()) {
+        if (marcaOptional.isEmpty()) {
             return "404";
         }
 
         Marca marca = marcaOptional.get();
         marca.setNombre(dataFormulario.getNombre());
         marca.setDescripcion(dataFormulario.getDescripcion());
-        marcaRepository.save(marca); // UPDATE 
+        marcaRepository.save(marca); // UPDATE
 
         return "redirect:/marcas";
     }
@@ -89,7 +85,7 @@ public class MarcaController {
     public String delete(@PathVariable Integer id) {
         // Optional<Marca> marcaOptional = marcaRepository.findById(id);
         // if(marcaOptional.isEmpty()) {
-        //     return "404";
+        // return "404";
         // }
         // Marca marca = marcaOptional.get();
         // marcaRepository.delete(marca);

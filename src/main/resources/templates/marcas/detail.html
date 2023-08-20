@@ -3,17 +3,28 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>EMPRESA PERSONAS </title>
+    <title>EMPRESA PERSONAS</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <!-- Agregar enlaces a los archivos de Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <a th:href="@{/nosotros}">Nosotros</a>
-    <a th:href="@{/marcas}">Empleados</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <div class="container">
+            <a class="navbar-brand" th:href="@{/nosotros}">Nosotros</a>
+            <a class="navbar-brand" th:href="@{/marcas}">Empleados</a>
+        </div>
+    </nav>
 
-    <h1>Datos Empleado <span th:text="${marca.nombre}"></span></h1>
-    <p th:text="${marca.apellido}"></p>
-    <p th:text="${marca.puesto}"></p>
-    <p th:text="${marca.salario}"></p>
+    <div class="container mt-4">
+        <h1>Datos Empleado <span th:text="${marca.nombre}"></span></h1>
+        <p class="lead" th:text="${marca.apellido}"></p>
+        <p class="lead" th:text="${marca.puesto}"></p>
+        <p class="lead" th:text="${marca.salario}"></p>
+    </div>
 
+    <!-- Agregar enlace al archivo de Bootstrap JS (opcional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

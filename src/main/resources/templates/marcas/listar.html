@@ -5,16 +5,15 @@
 </head>
 <body>
     <h1>Empleados con los que trabajamos</h1>
-    <p>Somos una empresa ... <strong>empleados sac</strong></p>
+    <p>Somos una empresa ... <strong>Mundo Hispano Sac</strong></p>
 
 
     <div sec:authorize="hasRole('ROLE_USER')">
-        <a th:href="@{/marcas/create}">Registrar empleado</a>
-        <a th:href="@{/productos/report}">Descargar reporte</a>
-
+        <a class="btn btn-success" th:href="@{/marcas/create}">Registrar empleado</a>
+        <a class="btn btn-secondary" th:href="@{/productos/report}">Descargar reporte</a>
     </div>
 
-    <table class="table">
+    <table class="table table-striped table-bordered">
         <thead>
             <tr>
                 <th>Id</th>
@@ -30,11 +29,12 @@
                 <td th:text="${marca.apellido}"></td>
                 <td th:text="${marca.puesto}"></td>
                 <td>
-                    <a th:href="@{/marcas/{id}(id=${marca.id})}">Ver</a>
+                    <a class="btn btn-success" th:href="@{/marcas/{id}(id=${marca.id})}">Ver</a>
                 </td>
                 <td>
-                    <a th:href="@{/marcas/{id}/edit(id=${marca.id})}">Editar</a>
+                    <a class="btn btn-info" th:href="@{/marcas/{id}/edit(id=${marca.id})}">Editar</a>
                 </td>
+                
             </tr>
         </tbody>
     </table>
